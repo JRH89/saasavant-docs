@@ -2,7 +2,6 @@
   "index": "Setup Firebase Project",
   "setup-firebase-functions": "Setup Firebase Functions",
   "setup-stripe": "Setup Stripe",
-  "stripe-firebase-extension": "Setup Firebase Extension",
   "adding-products-to-stripe": "Adding Products to Stripe",
   "setup-sendgrid": "Setup SendGrid",
   "wrapping-up": "Wrapping Up",

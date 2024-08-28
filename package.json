@@ -1,22 +1,15 @@
 {
-  "name": "firesaas-docs",
+  "name": "saasavant-docs",
   "version": "0.0.1",
-  "description": "FireSaaS docs",
+  "description": "saasavant docs",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AgentBurgundy/fire-saas-docs.git"
-  },
-  "author": "Shu Ding <g@shud.in>",
+  "author": "Jared Hooker",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/AgentBurgundy/fire-saas-docs/issues"
-  },
-  "homepage": "https://docs.firesaas.dev",
+  "homepage": "https://saasavant.vercel.app",
   "dependencies": {
     "next": "^13.0.6",
     "nextra": "latest",

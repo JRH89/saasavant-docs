@@ -4,7 +4,7 @@
   "setup-stripe": "Setup Stripe",
   "stripe-firebase-extension": "Setup Firebase Extension",
   "adding-products-to-stripe": "Adding Products to Stripe",
-  "setup-mixpanel": "Setup Mixpanel",
+  "setup-sendgrid": "Setup SendGrid",
   "wrapping-up": "Wrapping Up",
   "about": {
     "title": "About",
@@ -13,7 +13,7 @@
   "contact": {
     "title": "Contact ↗",
     "type": "page",
-    "href": "https://twitter.com/addicted_to_ai",
+    "href": "mailto:hookerhillstudios@gmail.com",
     "newWindow": true
   }
 }

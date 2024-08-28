@@ -58,17 +58,11 @@ And click the Get Started button on the page
 
 ![Demo Five](../public/demo-5.png)
 
-We'll start by enabling Email / Password Auth and Google Auth because they are the easiest to implement.
+We'll start by enabling Email / Password Auth since it is aleady implemented in SaaSavant.
 
 Click Email/Password under the Sign-in method tab of the authentication page.
 
 Now Click Save
-
-You'll now see an Add new provider button, click it to enable Google Auth
-
-Choose Google from the list of additional providers.
-
-Click the enable toggle to enable.
 
 Choose a public facing name for you project (Your users will see this, just name it your app's / company's name)
 
@@ -87,42 +81,5 @@ Set the location to the most appropriate location for your users (or just leave 
 Go ahead and start in test mode for now, this will leave your db open to reads and writes until a specific date. You can define more specific rules later.
 
 ---
-
-### **Create Firebase Admin Service Account**
-
-The last step is setting up firebase admin by creating a service account and copy pasting the service account values into your .env
-
-Click settings gear in project overview in the top left and click Project Settings
-
-![Demo 8](../public/demo-8.png)
-
-Click the Service Accounts tab
-
-![Demo 9](../public/demo-9.png)
-
-Click Generate new private key
-
-![Demo 10](../public/demo-10.png)
-
-This will download a JSON file containing your key information. The easiest way to use this private key in my opinion is to open it up in a text editor and copy paste the important values we need to setup Firebase Admin into your .env
-
-Open the file and copy the entire private_key value and the client_email value into your .env
-
----
-
-### **Adding Project ID**
-
-Finally we have to open the `.firebaserc` file inside the project.
-
-Add your project id here, you should have your project id in your Environment Variables already so copy it from there.
-
-```JSON
-// .firebaserc
-{
-  "projects": {
-    "default": "<PROJECT-ID-HERE>"
-  }
-}
-```
 
 That's all the Firebase Specific env vars.

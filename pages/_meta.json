@@ -1,8 +1,10 @@
 {
-  "index": "Setup Firebase Project",
+  "index": "Getting Started with SaaSavant",
+  "setup-firebase-project": "Setup Firebase Project",
   "setup-stripe": "Setup Stripe",
   "adding-products-to-stripe": "Adding Products to Stripe",
   "setup-sendgrid": "Setup SendGrid",
+  "admin-dashboard": "Admin Dashboard",
   "using-react-toasts": "Using React Toasts",
   "wrapping-up": "Wrapping Up",
   "about": {

@@ -1,0 +1,42 @@
+## Granting Admin Access in Firebase Firestore
+
+To grant admin access to a user in Firebase Firestore, follow these steps:
+
+1. **Navigate to the Firebase Console:**
+
+   - Open your web browser and go to the [Firebase Console](https://console.firebase.google.com/).
+   - Select your project from the list.
+
+2. **Access the Firestore Dashboard:**
+
+   - In the left-hand menu, click on **Firestore Database**.
+
+3. **Locate the Users Collection:**
+
+   - In the Firestore Database pane, find and click on the **Users** collection to expand it.
+
+4. **Find the User Document:**
+
+   - Look for the user document you recently created. You can search by user ID or any identifying information.
+
+
+5. **Add an Admin Field:**
+
+   - Click on the user document to open it.
+   - Click on the **Add Field** button.
+   - Enter `isAdmin` as the field name.
+   - Set the type to **Boolean**.
+   - Set the value to **true**.
+   - Click **Add** to apply the changes.
+
+![Demo 13](/demo-13.png)
+
+6. **Save and Confirm Changes:**
+
+   - Review your changes to ensure they are correct.
+   - Ensure that the `isAdmin` field is set to `true` for the appropriate users.
+
+> **Note:** You can set as many users as you want to be admins. However, be cautious when assigning admin rights, as granting admin privileges to the wrong person can have significant security implications.
+
+If you need any further assistance or have questions, feel free to reach out!
+

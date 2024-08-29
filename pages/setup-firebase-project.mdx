@@ -1,0 +1,71 @@
+import { Callout } from "nextra-theme-docs";
+
+# Firebase Configuration
+
+## **Create a New Firebase Project**
+
+Start by creating a new project in Firebase.
+
+Once you have a new project open on Firebase it'll look something like this
+
+![Demo one](../public/demo-1.png)
+
+---
+
+## **Copy Firebase Config Environment Variables**
+
+Click on the web button here
+
+![Demo Two](../public/demo-2.png)
+
+It will ask you to give your app a name, name it whatever you like
+
+<Callout emoji="📣">
+  {" "}
+  This project is setup to be hosted on Vercel, not Firebase hosting. Leave it unchecked
+  for now unless you specifically want to host it on Firebase
+</Callout>
+
+Then you will get the Add Firebase SDK screen, it will show you your Firebase Config, these values need to be added to the .env
+
+![Demo Three](../public/demo-3.png)
+
+Copy paste each value that I've blacked out and move it into your match variable in the .env.
+
+---
+
+## **Enable Authentication and Firestore**
+
+Next you'll want to enable Auth and Firestore in Firebase. To do that just click on the Authentication option in the sidebar menu on the left.
+
+![Demo Four](../public/demo-4.png)
+
+And click the Get Started button on the page
+
+![Demo Five](../public/demo-5.png)
+
+We'll start by enabling Email / Password Auth since it is aleady implemented in SaaSavant.
+
+Click Email/Password under the Sign-in method tab of the authentication page.
+
+Now Click Save
+
+Choose a public facing name for you project (Your users will see this, just name it your app's / company's name)
+
+and configure a support email for the project (most likely just your email already connected to firebase.)
+
+Auth is done, now go setup Firestore
+
+![Demo 6](../public/demo-6.png)
+
+Now click the Create Database button
+
+![Demo 7](../public/demo-7.png "The Create Database Button")
+
+Set the location to the most appropriate location for your users (or just leave it on the default)
+
+Go ahead and start in test mode for now, this will leave your db open to reads and writes until a specific date. You can define more specific rules later.
+
+---
+
+That's all the Firebase Specific env vars.

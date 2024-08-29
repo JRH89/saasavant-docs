@@ -2,46 +2,60 @@ import { Callout } from "nextra-theme-docs";
 
 # Adding Products to Stripe
 
-Let's create a product inside Stripe, so that our users can upgrade their accounts to become Premium Users.
+Let's create a product in Stripe so that users can upgrade their accounts to become Premium Users.
 
----
+<Callout emoji="📣"> **Important:** Do not add products before your extension is fully installed and the webhook is set up. Adding a product triggers the webhook, so if the installation isn't complete, your product might not appear until you update it. </Callout>
+1. Create a New Product in Stripe
 
-<Callout emoji="📣">
-  {" "}
-  Do not add products before your extension is done installing and the webhook is setup.
+- Access the Stripe Dashboard.
 
-Adding a product calls the webhook, so if you add a product before it's done your product will not show up until you update it.
+- In the left-hand menu, click on Products.
 
-</Callout>
+- Click on the Add Product button.
 
-Back at the Stripe Dashboard, click on Products, and Add Product.
+- Enter Product Details:
 
-Enter the name of your product (something like "Premium Plan") and an optional description of the product.
+  1. Product Name: Give your product a name, such as "Monthly Plan" or "Yearly Plan".
+  2. Description: Optionally, provide a brief description of the product.
 
-Beneath that, open up the additional options section, and add a metadata field called firebaseRole with the value of premium.
+- Configure the Product:
 
-This value will be attached to the user inside Firebase as a custom claim on the user.
+  1. Set the correct price.
 
-This allows us to quickly see if a user is a premium customer or a free customer within the Firebase User itself. You can also extend your firebase rules to restrict access on the server-side, based on this custom claim.
+  2. Choose the type of charge (recurring, one-time, etc.).
 
-The default SubscriptionCard components I wrote, really expect Two products, but you should customize it to fit your requirements.
+  3. Configure any other options according to your needs.
 
-NOTE My SubscriptionCard components also expect additional metadata for the products. You may want to skip this if you plan to customize how you display your products.
+The default subscription component in SaaSavant expects two products/prices. Customize this to fit your specific requirements.
 
-I add a buttonText metadata for the text on the purchase button and a popular metadata, to define if a product is popular or not (string of true or false)
+2. Add Stripe priceIds to Environment Variables
 
----
+- Copy the Price ID:
 
-### **Adjusting the Features Map**
+  1. After creating your product, click on it in the Stripe Dashboard.
+  2. In the popup menu, select Copy Price ID.
+  
+Update Your .env File:
 
-Finally, once your products are added you need to adjust the SubscriptionCard component's featuresMap.
+Open the .env file in your project’s root directory.
 
-```js
-// ./src/components/subscription/SubscriptionCard.tsx
-const featuresMap: any = {
-  "Basic Plan": ["Feature 1", "Feature 2", "Feature 3"],
-  "Premium Plan": ["Feature 1", "Feature 2", "Feature 3", "Feature 4"],
-};
+Paste the copied Price ID into the appropriate variable, for example:
+
+```env
+Copy code
+NEXT_PUBLIC_MONTHLY_ID=your_monthly_price_id_here
+NEXT_PUBLIC_YEARLY_ID=your_yearly_price_id_here
 ```
 
-Adjust the plan names to match your product plan names exactly, and add the features you'd like to display on the Subscription card.
+Replace your_monthly_price_id_here and your_yearly_price_id_here with the actual Price IDs you copied.
+
+Save Your Changes:
+
+Ensure you save the .env file after pasting in the Price IDs.
+Repeat for Additional Products:
+
+If you have multiple products, repeat the process to add each product&apos;s Price ID to the .env file.
+
+---
+
+You're all set! Your Stripe products are now configured, and the Price IDs are stored in your environment variables.

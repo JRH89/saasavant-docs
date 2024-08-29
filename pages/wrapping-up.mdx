@@ -10,42 +10,39 @@ Let's wrap up real quick by finishing up our .env file.
 
 The Nextjs project utilizes server side api calls, this means we need a fully qualified URL to hit our own API.
 
-To solve this we have these two env variables
+To solve the we have this env variable:
 
 ```sh
-# Firebase Functions
-NEXT_PUBLIC_FIREBASE_FUNCTIONS_BASE_URL="http://127.0.0.1:5001/<project-id>/<region>"
-
 # Config
-NEXT_PUBLIC_SITE_URL="http://localhost:3000"
+NEXT_PUBLIC_BASE_URL=""
 ```
 
-When developing locally, you want these variables to reference localhost (as they already do).
+Since we have not set this env variable yet, it will fallback to http://localhost:3000 for development purposes.
 
-The only one you need to update for local development is the Firebase Functions Base url
+When deploying, you should update it to the deployed url of your project, for example:
 
-<Callout emoji="📣">
-  {" "}
-  You'll find project-id in your environment variables for the firebase config.
-
-The region is the region you setup on Firebase's console when creating your project. It's like **us-central1** if you're in the USA.
-
-</Callout>
-
-When deploying, you should update these to the deployed url, for example.
-
-If your url is https://mycoolsaas.com
+If your url is https://saasavant.vercel.app
 
 Your env var would look like this
 
 ```sh
-# Firebase Functions - baseUrl that allows you hit firebase functions via HTTPS
-NEXT_PUBLIC_FIREBASE_FUNCTIONS_BASE_URL="https://<region>-<project-id>.cloudfunctions.net"
-
-# Config
-NEXT_PUBLIC_SITE_URL="http://mycoolsaas.com"
+NEXT_PUBLIC_BASE_URL="http://saasavant.vercel.app"
 ```
 
 ### **Congrats**
 
-Your project should be setup to run, hit `yarn dev` and see if everything works properly. Now it's your turn to make something cool!
+Your project should be setup and ready for development. Run `yarn dev` or `npm run  dev` from the terminal in the root directory of your porject to start the development server.
+
+Head to http://localhost:3000/Signup to create a test account.
+
+Check out the [user dashboard](http://localhost:3000/Dashboard), it should display your user email address, user ID, and subscription status.
+
+![Demo 12](../public/demo-12.png)
+
+If you are using Stripe Development Mode API Keys (recommended while developing and testing), you can use a 'test' credit card to mock a payment and ensure successful subscription creation. See the [Stripe docs](https://stripe.com/docs/testing#cards) for more details.
+
+To get the development keys, head to https://dashboard.stripe.com/test/apikeys
+
+When you are done testing, replace the keys in the .env file with your live keys and turn off the development mode in the Stripe Dashboard.
+
+![Demo 11](../public/demo-11.png)

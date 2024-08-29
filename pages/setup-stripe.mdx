@@ -2,44 +2,67 @@ import { Callout } from "nextra-theme-docs";
 
 # Setting Up Stripe
 
-We'll need to add our Stripe keys into the `.env`. Let's setup Stripe.
+To integrate Stripe into your application, you’ll need to configure some environment variables and set up the Customer Portal. Follow these steps to get everything set up.
 
 ## Table of Contents
 
-- [Getting Keys](#getting-keys)
-- [Setting up Customer Portal](#setting-up-customer-portal)
+- [Getting Stripe Keys](#getting-stripe-keys)
+- [Setting Up the Customer Portal](#setting-up-the-customer-portal)
 
 ---
 
-### **Getting Keys**
+### **Getting Stripe Keys**
 
 <Callout emoji="📣">
-  {" "}
-  I'm going to assume you already have a Stripe account. If not, you'll need to create one. Head to https://stripe.com
-
+  Before you proceed, ensure you have a Stripe account. If you don't, create one at [Stripe's website](https://stripe.com).
 </Callout>
 
-First thing we need to do is grab your env vars for Stripe.
+To start using Stripe, you need to obtain your API keys and configure them in your environment variables.
 
-We need these values.
+1. **Access Your Stripe Dashboard:**
+   - Log in to your [Stripe Dashboard](https://dashboard.stripe.com/).
 
-```json
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=""
-STRIPE_SECRET_KEY=""
-```
 
-On your Stripe dashboard, hit Developers. (I recommend also hitting Test for local keys before you deploy anything to prod.)
+2. **Navigate to API Keys:**
+   - In the left-hand menu, click on **Developers**.
+   - Select **API keys**.
 
-Copy your publishable key and your secret key into the Env Vars.
+
+3. **Obtain Your Keys:**
+   - **Publishable Key:** This key is used on the client-side of your application. Copy the key labeled **Publishable key**.
+   - **Secret Key:** This key is used on the server-side of your application. Copy the key labeled **Secret key**.
+
+
+4. **Add Keys to Your `.env` File:**
+   - Open the `.env` file located in your project’s root directory.
+   - Add the following lines to your `.env` file, replacing the placeholder text with your actual keys:
+
+     ```env
+     NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY={your_publishable_key_here}
+     STRIPE_SECRET_KEY={your_secret_key_here}
+     ```
+
+   - Save the `.env` file after adding the keys.
+
+   > **Note:** For local development, consider using the test keys available in your Stripe Dashboard under the "View test data" mode. Switch to live keys when deploying to production.
 
 ---
 
-### **Setting up Customer Portal**
+### **Setting Up the Customer Portal**
 
-Users need to be able to manage their account right? Stripe provides an easy way to give users this functionality through their hosted portal. But you have to turn it on.
+To allow users to manage their subscriptions and payment methods, you'll need to enable the Stripe Customer Portal. Follow these steps to set it up:
 
-Go to this url https://dashboard.stripe.com/settings/billing/portal
+1. **Enable the Customer Portal:**
+   - Go to [Stripe's Customer Portal settings](https://dashboard.stripe.com/settings/billing/portal) in your Stripe Dashboard.
+   - In the Customer Portal settings page, locate the option to enable the portal. Click the toggle or button to enable it.
 
-You can customize the portal, but the most important thing is to simply enable it with the button on the left. Once enabled you're good to go (this project grabs customer portal links already!) 
+2. **Customize the Portal (Optional):**
+   - Stripe provides options to customize the look and functionality of the portal. Adjust settings according to your needs, such as branding, language, and features available to users.
 
-Users can access their Stripe account to manage subscriptions, payment methods, invoices, and more. SaaSavant comes with a premade user account page with a link that will direct users to their Stripe portal. Once you have enabled the portal, you are done with this part of setup.
+3. **Integrate the Portal into Your Application:**
+   - Once the portal is enabled, users can access their Stripe account to manage subscriptions, payment methods, invoices, and more.
+   - SaaSavant includes a pre-made user account page with a link that directs users to their Stripe portal. Ensure that this link is correctly integrated into your product by.
+
+---
+
+You&apos;re now set up with Stripe for handling payments and subscriptions, and your users can manage their accounts through the Stripe Customer Portal.

@@ -1,11 +1,41 @@
 import { Callout } from "nextra-theme-docs";
 
-# Setup SendGrid
+# Setting Up SendGrid and Configuring Your API Key
 
-Now we have to get our SendGrid key
+1. Create a SendGrid Account
 
-Create a SendGrid account and grab your **api key** from Settings.
+- Open your browser and navigate to [SendGrid&apos;s website](https://sendgrid.com/).
+- Click on **Sign Up** and follow the on-screen instructions to create your account.
 
-Place it into the .env and you should be good to go. 
+2. Generate Your API Key
 
-Set your email address as a from address in your SendGrid account. You will need to make sure it's verified before it will work.
+- Once logged in, go to the **Settings** tab on the left-hand sidebar.
+- Click on **API Keys**.
+- Click **Create API Key** and provide a name for your key (e.g., "MyProject API Key").
+- Choose the appropriate permissions for your key (Full Access is recommended for most use cases).
+- Click **Create & View**. Your API key will be displayed—copy it immediately as you won&apos;t be able to view it again.
+
+3. Approve a "From" Email Address
+
+- Navigate to the **Sender Authentication** section in the Settings menu.
+- Click **Verify a Single Sender**.
+- Fill out the form with your email address and other required details.
+- Click **Create**.
+- SendGrid will send a verification email to the address you provided. Open that email and click on the verification link to approve the address.
+
+4. Add Your API Key to the .env File
+
+- Open your project&apos;s root directory.
+- Locate the `.env` file or create one if it doesn&apos;t exist.
+- Add your SendGrid API key to the `.env` file as follows:
+
+```env
+Copy code
+NEXT_PUBLIC_SENDGRID_API_KEY=your_sendgrid_api_key_here
+```
+
+- Replace your_sendgrid_api_key_here with the actual API key you copied earlier.
+
+5. Use Your Verified Email Address
+
+Set the verified email address as the **From** address in your SendGrid configuration within your application (located in the `.env` file).

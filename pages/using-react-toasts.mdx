@@ -1,0 +1,66 @@
+# Toast Notifications with React-Toastify
+
+In this guide, you'll learn how to use `react-toastify` to display toast notifications in your application. The setup in the `RootLayout` file already includes a pre-configured `ToastContainer`, so all you need to do is import `toast` and use it in your components.
+
+## Usage Example
+
+Here's an example of how to use `react-toastify` in a component:
+
+```jsx
+import { toast } from 'react-toastify';
+
+const ExampleComponent = () => {
+  const handleSuccess = () => {
+    toast.success("Operation was successful!");
+  };
+
+  const handleError = () => {
+    toast.error("Something went wrong.");
+  };
+
+  return (
+    <div>
+      <button onClick={handleSuccess}>Show Success Toast</button>
+      <button onClick={handleError}>Show Error Toast</button>
+    </div>
+  );
+};
+
+export default ExampleComponent;
+```
+
+## Explanation
+
+1. **import `toast` from `react-toastify`**: At the top of your component, import `toast` from `react-toastify`. This will allow you to trigger notifications.
+
+2. **Trigger Notifications**: Use `toast.success`, `toast.error`, `toast.info`, or `toast.warn` to display different types of notifications. These methods accept a message as a string.
+
+3. **Toast Types**:
+
+- **Success**: toast.success("Operation was successful!");
+- **Error**: toast.error("Something went wrong.");
+- **Info**: toast.info("Here is some information.");
+- **Warning**: toast.warn("This is a warning!");
+
+## Customizing the Toast Container
+
+If you want to customize the behavior or appearance of the `ToastContainer`, you can edit the settings in the `RootLayout` file. For example, you can change the theme, position, auto-close duration, etc.
+
+```jsx
+<ToastContainer
+  position="bottom-center"
+  autoClose={3000}
+  hideProgressBar
+  newestOnTop
+  closeOnClick
+  rtl={false}
+  pauseOnFocusLoss
+  draggable
+  pauseOnHover
+  theme="light" // Change this to "dark" for a dark theme
+/>
+```
+
+You can adjust the `position`, `autoClose` time, and even switch to a `dark` theme if desired. Any changes here will apply globally to all toasts in your application.
+
+Now you're all set to use `react-toastify` in your application!

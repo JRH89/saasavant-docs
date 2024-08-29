@@ -2,6 +2,7 @@
   "index": "Getting Started with SaaSavant",
   "setup-firebase-project": "Setup Firebase Project",
   "setup-stripe": "Setup Stripe",
+  "connecting-firebase-to-stripe": "Connecting Firebase to Stripe",
   "adding-products-to-stripe": "Adding Products to Stripe",
   "setup-sendgrid": "Setup SendGrid",
   "admin-dashboard": "Admin Dashboard",

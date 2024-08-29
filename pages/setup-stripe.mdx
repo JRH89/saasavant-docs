@@ -63,17 +63,12 @@ To allow users to manage their subscriptions and payment methods, you'll need to
    - Once the portal is enabled, users can access their Stripe account to manage subscriptions, payment methods, invoices, and more.
    - SaaSavant includes a pre-made user account page with a link that directs users to their Stripe portal. Ensure that this link is correctly integrated into your product by.
 
----
-
-You&apos;re now set up with Stripe for handling payments and subscriptions, and your users can manage their accounts through the Stripe Customer Portal.
-
-![Demo 11](../public/demo-11.avif)
 
 ### **Stripe Webhook**
 
 Now we need to setup a Stripe Webhook. The webhook is used to send notifications to your application when certain events occur in Stripe. This ensures that only paying users see certain content.
 
-To do that, we'll go back to our Stripe Dashboard, and click Developers > Webhooks.
+To do that, we'll go to the Stripe Dashboard, and click Developers > Webhooks.
 
 Select the following events to send to that endpoint:
 

@@ -34,7 +34,9 @@ SaaSavant is a robust and feature-rich SaaS boilerplate designed to accelerate y
 
 ### Authentication and Authorization
 
-SaaSavant includes a secure and scalable authentication system powered by Firebase Authentication. It supports a preconfigured sign-in flow, using email and password.
+SaaSavant includes a secure and scalable authentication system powered by Firebase Authentication. It supports a preconfigured sign-in flow using email and password.
+
+Other authentication methods, such as Google, Facebook, and GitHub, can be added as well by enabling them from the Firebase dashboard.
 
 Additionally, role-based authorization ensures that users have access only to the parts of the application they need.
 
@@ -47,10 +49,9 @@ SaaSavant integrates seamlessly with Stripe to handle subscription payments. The
 - Subscription plans: Create and manage multiple subscription tiers.
 - Automatic billing: Charge customers on a recurring basis.
 - Webhooks: Listen for and handle events such as successful payments, subscription cancellations, and failed payments.
-- Coupon codes: Offer discounts and promotional pricing.
+- Account Management: Allow users of your SaaS application to manage their subscription details.
 
-**Screenshot Placeholder**  
-{/* ![Subscription Management](#) */}
+![Paginated User List](../public/account-2.png)
 
 ### Admin Dashboard
 
@@ -61,14 +62,11 @@ The admin dashboard in SaaSavant provides a comprehensive interface for managing
 #### Paginated User List
 
 - **User Management**: View and manage all registered users.
-- **Pagination**: Display users in pages, with a limit of 50 users per page and scrolling after the first 10 for ease of navigation.
+- **Pagination**: Display users in pages, with a limit of 50 users per page and scrolling after the first 10 for ease of navigation. These values are customizable, more on that later.
 
 #### Announcements
 
-- **Create Announcements**: Admins can create and publish announcements to be displayed to all users. This feature supports text and provides an easy interface to manage important updates.
-
-**Screenshot Placeholder**  
-{/* ![Announcements](#) */}
+- **Create Announcements**: Admins can create and publish announcements to be displayed to all users.
 
 ### User Dashboard
 
@@ -78,8 +76,7 @@ Each user has access to a personalized dashboard where they can:
 
 - **View Subscription Details**: Access information about their current subscription and manage billing.
 - **Upgrade Subscription**: Easily upgrade to a premium plan directly from their dashboard.
-- **Access Support Tickets**: View their submitted support tickets and track their status.
-
+- **Submit or Access Support Tickets**: View their submitted support tickets and track their status.
 
 #### User Account Management
 
@@ -87,16 +84,16 @@ Each user has access to a personalized dashboard where they can:
 
 - **Upgrade to Premium**: Users can upgrade their subscription plan if they haven't already.
 - **Manage Account**: Subscribed users can manage their subscription details.
-- **Reset Password**: Easily reset their password if they forget it.
+- **Reset Password**: Users can easily reset their password if they forget it.
 - **Delete Account**: Users have the option to delete their account if they choose to leave the service.
-
-![User Dashboard](../public/account-2.png)
 
 **Stripe Account Management**
 
+![User Dashboard](../public/account-2.png)
+
 - Users can manage their Stripe account details and subscriptions.
 - SaaSavant is preconfigured to autogenerate a Stripe URL for each user when they subscribe. This URL can be used to manage their Stripe account. 
-- Clicking the "Manage Subscription" button from their user account page will take them straight to their Stripe account using the Stripe URL.
+- Clicking the "Manage Subscription" button from their user account page will take them straight to their Stripe account using this Stripe URL.
 
 ### Support Ticket System
 
@@ -120,9 +117,7 @@ SaaSavant integrates with SendGrid to send email notifications for various event
 
 - Welcome emails upon registration (pre-configured)
 - Support ticket updates
-- Update notifications
-
-You will need to 
+- App update notifications
 
 ### Real-time Database with Firestore
 
@@ -132,15 +127,9 @@ Firestore serves as the primary database for SaaSavant, providing real-time data
 - Managing support tickets
 - Logging user activities and interactions
 
-**Screenshot Placeholder**  
-{/* ![Firestore Database](#) */}
-
 ### Responsive Design
 
 SaaSavant is built with a mobile-first approach, ensuring that your application looks great and functions seamlessly across all devices, from desktops to smartphones.
-
-**Screenshot Placeholder**  
-{/* ![Responsive Design](#) */}
 
 ## Technology Stack
 
@@ -150,6 +139,7 @@ SaaSavant is built with a mobile-first approach, ensuring that your application 
 - **React**: The core library for building the user interface.
 - **Tailwind CSS**: A utility-first CSS framework for fast and responsive UI development.
 - **Framer Motion**: For adding smooth animations and interactions to the UI.
+- **React Toastify**: For displaying toast notifications.
 
 ### Backend
 
@@ -172,7 +162,5 @@ SaaSavant is built with a mobile-first approach, ensuring that your application 
 ## Conclusion
 
 SaaSavant is designed to save you time and effort, allowing you to focus on building the core functionality of your SaaS product. With its comprehensive feature set and modern technology stack, SaaSavant is the ideal starting point for your next SaaS application.
-
-
 
 ![SaaSavant Overview](../public/preview.png)

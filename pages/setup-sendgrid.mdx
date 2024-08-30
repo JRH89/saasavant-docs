@@ -26,8 +26,8 @@ import { Callout } from "nextra-theme-docs";
 4. Add Your API Key to the .env File
 
 - Open your project&apos;s root directory.
-- Locate the `.env` file or create one if it doesn&apos;t exist.
-- Add your SendGrid API key to the `.env` file as follows:
+- Locate the `.env.local` file or create one if it doesn&apos;t exist.
+- Add your SendGrid API key to the `.env.local` file as follows:
 
 ```env
 Copy code
@@ -38,4 +38,4 @@ NEXT_PUBLIC_SENDGRID_API_KEY=your_sendgrid_api_key_here
 
 5. Use Your Verified Email Address
 
-Set the verified email address as the **From** address in your SendGrid configuration within your application (located in the `.env` file).
+Set the verified email address as the value of the `NEXT_PUBLIC_SENDGRID_FROM_EMAIL` variable located in the `.env.local` file.

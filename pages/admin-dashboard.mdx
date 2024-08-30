@@ -1,6 +1,30 @@
 ## Granting Admin Access in Firebase Firestore
 
-To grant admin access to a user in Firebase Firestore, follow these steps:
+### Create Your First User
+
+Now that the necessary environment variables are set and the SaaSavant dependeccies are installed, you can create your first user. This can either be a temporary test user or a real user that you can set as an Admin. Setting a user as admin will allow you to access the SaaSavant admin dashboard and manage your SaaS product as mentioned earlier.
+
+Once this is done the first time and you have access to the Admin Dashboard, you can grant admin access to any user from there. The following setup process is only required to grant admin access to the first admin user.
+
+1. Open a terminal and navigate to your project directory.
+
+```bash
+cd /path/to/your/project
+```
+
+2. Run the following command:
+
+```bash
+npm run dev
+```
+
+3. Open your browser and navigate to `Signup` page.
+
+[Admin Dashboard](http://localhost:3000/Signup)
+
+4. Enter your credentials and submit the form.
+
+To grant admin access to the user in Firebase Firestore, follow these steps:
 
 1. **Navigate to the Firebase Console:**
 
@@ -18,7 +42,6 @@ To grant admin access to a user in Firebase Firestore, follow these steps:
 4. **Find the User Document:**
 
    - Look for the user document you recently created. You can search by user ID or any identifying information.
-
 
 5. **Add an Admin Field:**
 

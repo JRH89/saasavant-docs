@@ -2,30 +2,21 @@
 
 Once you've created a Stripe webhook, you'll need to configure the "Run Payments with Stripe" extension to handle various Stripe events, such as payment successes, subscription updates, and cancellations. Follow the steps below to ensure everything is set up correctly.
 
-## Prerequisites
-
-- A Firebase project with the "Run Payments with Stripe" extension installed.
-
-    - Visit [Run Payments With Stripe](https://extensions.dev/extensions/stripe/firestore-stripe-payments)
-    - Install the "Run Payments with Stripe" extension to the Firebase project created earler.
-
-- A Stripe account with a webhook created and configured to send events to your Firebase project.
-
-## Step 1: Verify Your Webhook URL
-
-Make sure your Stripe webhook is pointing to the correct URL. Typically, this will be your Firebase Cloud Function endpoint that was automatically set up by the extension. You can find this URL in the Firebase Console under **Functions**.
-
-1. Navigate to your Stripe Dashboard.
-2. Go to **Developers > Webhooks**.
-3. Ensure the webhook URL matches your Firebase Cloud Function endpoint.
-
-## Step 3: Review the Extension Configuration
-
-Check that the "Run Payments with Stripe" extension is correctly configured to handle the incoming events. The extension should already have settings in place for managing subscriptions, handling payments, and updating your Firebase database.
+## Step 1: Configre the "Run Payments with Stripe" Extension
 
 1. Go to your Firebase Console.
 2. Navigate to **Extensions** and select the "Run Payments with Stripe" extension.
-3. Review the configuration options. Ensure that the necessary Firestore paths, functions, and API keys are set up.
+3. Click 'Install'.
+
+Follow the on-screen instructions to install the extension, You will need to enable a billing account, continue to follow the on-screen instructions and enable the two neccessary services:
+
+![User Dashboard](../public/strip1.png)
+
+Click next to be taken to the configuration form. I recommend the following settings, but you can change them as needed (e.g., if you want to use a different Cloud Functions deployment location). Replace the API and webhook secrets with your own. They can be found in your .env.local file.
+
+![User Dashboard](../public/strip2.png)
+![User Dashboard](../public/strip3.png)
+![User Dashboard](../public/strip4.png)
 
 ## Step 4: Test the Integration
 

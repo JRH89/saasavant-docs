@@ -1,5 +1,6 @@
 {
-  "index": "Getting Started with SaaSavant",
+  "index": "All About SaaSavant",
+  "getting-started-with-saasavant": "Getting Started with SaaSavant",
   "setup-firebase-project": "Setup Firebase Project",
   "setup-stripe": "Setup Stripe",
   "connecting-firebase-to-stripe": "Connecting Firebase to Stripe",

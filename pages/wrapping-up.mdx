@@ -33,16 +33,34 @@ NEXT_PUBLIC_BASE_URL="http://saasavant.vercel.app"
 
 Your project should be setup and ready for development. Run `yarn dev` or `npm run  dev` from the terminal in the root directory of your porject to start the development server.
 
-Head to http://localhost:3000/Signup to create a test account.
-
-Check out the [user dashboard](http://localhost:3000/Dashboard), it should display your user email address, user ID, and subscription status.
-
-![Demo 12](../public/demo-12.png)
-
 If you are using Stripe Development Mode API Keys (recommended while developing and testing), you can use a 'test' credit card to mock a payment and ensure successful subscription creation. See the [Stripe docs](https://stripe.com/docs/testing#cards) for more details.
 
 To get the development keys, head to https://dashboard.stripe.com/test/apikeys
 
-When you are done testing, replace the keys in the .env file with your live keys and turn off the development mode in the Stripe Dashboard.
+When you are done testing, replace the keys in the `.env.local` file with your live keys and turn off the development mode in the Stripe Dashboard.
 
 ![Demo 11](../public/demo-11.png)
+
+Checklist:
+
+pre:
+[]: setup project
+[]: setup firebase
+[]: setup stripe
+[]: setup sendgrid
+[]: setup .env.local
+[]: create admin user
+
+mid:
+[]: build your Saas
+
+post:
+[]: Change Firestore to Production Mode in Firebase Settings adjust rule
+[]: Change Stripe to Production Mode in Stripe Settings
+[]: Change Firebase to Production Mode in Firebase Settings
+[]: Change the `NEXT_PUBLIC_BASE_URL` in `.env.local`
+[]: Run `yarn dev` or `npm run dev`
+[]: test app
+[]: deploy
+
+---

@@ -15,7 +15,6 @@ const config: DocsThemeConfig = {
       <span style={{ marginLeft: 10, fontWeight: 'bold', fontSize: 20 }}>SaaSavant</span>
     </>
   ),
-  docsRepositoryBase: "https://saasavant-docs.vercel.app",
   footer: {
     text: (
       <>

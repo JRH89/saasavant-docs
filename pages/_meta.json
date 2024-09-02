@@ -6,8 +6,8 @@
   "connecting-firebase-to-stripe": "Step 4: Connecting Firebase to Stripe",
   "adding-products-to-stripe": "Step 5: Adding Products to Stripe",
   "setup-sendgrid": "Step 6: Setup Sendgrid",
-  "admin-dashboard": "Admin Dashboard",
-  "using-react-toasts": "Using React Toasts",
+  "admin-dashboard": "Step 7: Create Admin User",
+  "using-react-toasts": "Customizing React Toasts",
   "wrapping-up": "Wrapping Up",
   "checklist": "Checklist",
   "about": {

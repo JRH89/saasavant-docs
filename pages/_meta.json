@@ -7,9 +7,9 @@
   "adding-products-to-stripe": "Step 5: Adding Products to Stripe",
   "setup-sendgrid": "Step 6: Setup Sendgrid",
   "admin-dashboard": "Step 7: Create Admin User",
-  "using-react-toasts": "Customizing React Toasts",
   "wrapping-up": "Wrapping Up",
   "checklist": "Checklist",
+  "using-react-toasts": "Customizing Toast Notifications (optional)",
   "about": {
     "title": "About",
     "type": "page"

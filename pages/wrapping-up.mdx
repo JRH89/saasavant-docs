@@ -39,6 +39,7 @@ Let's wrap up by completing our `.env.local`, `siteMetadata.js`, and `tailwind.c
 In a production environment, it's crucial to ensure that your Firestore rules protect sensitive data while allowing the necessary access. Here's a sample Firestore rule set that allows anyone to read documents but only authenticated users can write or delete:
 
 ```json
+rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     // Allow anyone to read any document
@@ -72,28 +73,3 @@ If you are using Stripe Development Mode API Keys (recommended while developing 
 When you are done testing, replace the keys in the `.env.local` file with your live keys and turn off the development mode in the Stripe Dashboard.
 
 ![Demo 11](../public/demo-11.png)
-
-## Checklist:
-
-Setup:
--  [  ]: Setup .env.local
--  [  ]: Setup siteMetadata.js
--  [  ]: Setup project
--  [  ]: Setup firebase
--  [  ]: Setup stripe
--  [  ]: Setup sendgrid
--  [  ]: Create admin user
-
-Develop:
--  [  ]: Build your Saas
--  [  ]: Edit theme in 'tailwind.config.js'
-
-Deploy:
--  [  ]: Change Firestore to Production Mode in Firebase Settings adjust rules
--  [  ]: Change Stripe to Production Mode in Stripe Settings
--  [  ]: Change Firebase to Production Mode in Firebase Settings
--  [  ]: Change Firestore rules to production using the provided rules above
--  [  ]: Change the `NEXT_PUBLIC_BASE_URL` in `.env.local`
--  [  ]: Run `yarn dev` or `npm run dev`
--  [  ]: Test app
--  [  ]: Deploy

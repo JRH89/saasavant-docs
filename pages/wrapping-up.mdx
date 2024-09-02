@@ -2,65 +2,98 @@ import { Callout } from "nextra-theme-docs";
 
 # Wrapping Up
 
-Let's wrap up real quick by finishing up our .env file.
+Let's wrap up by completing our `.env.local`, `siteMetadata.js`, and `tailwind.config.js` files.
 
----
+- Environment Variables
+![Demo 11](../public/env-local.png)
 
-### **Site URL and Functions URL**
+- Site Metadata
+![Demo 11](../public/siteMetadata.png)
 
-The Nextjs project utilizes server side api calls, this means we need a fully qualified URL to hit our own API.
+- Edit Theme
+![Demo 11](../public/edit-theme.png)
 
-To solve the we have this env variable:
+## Next Steps
 
-```sh
-# Config
-NEXT_PUBLIC_BASE_URL=""
+1. Confirm Completion of Guide Steps:
+
+- Ensure you have followed all steps outlined in this guide.
+- Verify that you have successfully set up Firebase, Stripe, and SendGrid projects.
+
+2. Check Configuration Files:
+
+- Your `.env.local` and `siteMetadata.js` files should be correctly configured and in place.
+
+3. Set Up Development Environment:
+
+- Run `yarn dev` or `npm run dev` from the terminal in the root directory of your project to start the development server.
+
+4. Test Payment Integration:
+
+- If you are using Stripe's Development Mode API Keys (recommended for development and testing), use a 'test' credit card to simulate a payment and ensure successful subscription creation. For more details, refer to the [Stripe testing documentation](https://stripe.com/docs/testing#cards).
+- Obtain development keys from [Stripe Dashboard](https://dashboard.stripe.com/test/apikeys).
+- Once testing is complete, replace the keys in the `.env.local` file with your live keys and turn off Development Mode in the Stripe Dashboard.
+
+3. Sample Firestore Rules for Production
+
+In a production environment, it's crucial to ensure that your Firestore rules protect sensitive data while allowing the necessary access. Here's a sample Firestore rule set that allows anyone to read documents but only authenticated users can write or delete:
+
+```json
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow anyone to read any document
+    match /{document=**} {
+      allow read: if true;
+
+      // Allow authenticated users to write or delete documents
+      allow write, delete: if request.auth != null;
+    }
+  }
+}
 ```
 
-Since we have not set this env variable yet, it will fallback to http://localhost:3000 for development purposes.
+### Explanation:
+- **'allow read: if true;'** - This rule allows anyone to read data from your Firestore database.
+- **'allow write, delete: if request.auth != null;'** - This rule allows only authenticated users to write or delete documents. **'request.auth'** is used to check if the user is authenticated.
 
-When deploying, you should update it to the deployed url of your project, for example:
+### Additional Recommendations:
 
-If your url is https://saasavant.vercel.app
+- **Limit Write Access**: Adjust the rules based on the specific collections and documents where write access is necessary. For example, you might want to restrict write access to only certain users or roles.
+- **Testing**: Before deploying the rules, test them thoroughly to ensure they meet your security and access requirements.
 
-Your env var would look like this
+By following these steps and using the sample rules, you can ensure that your application is both functional and secure for production use.
 
-```sh
-NEXT_PUBLIC_BASE_URL="http://saasavant.vercel.app"
-```
+## **Congrats**
 
-### **Congrats**
+Your project should be setup and ready for development. Run `yarn dev` or `npm run  dev` from the terminal in the root directory of your project to start the development server.
 
-Your project should be setup and ready for development. Run `yarn dev` or `npm run  dev` from the terminal in the root directory of your porject to start the development server.
-
-If you are using Stripe Development Mode API Keys (recommended while developing and testing), you can use a 'test' credit card to mock a payment and ensure successful subscription creation. See the [Stripe docs](https://stripe.com/docs/testing#cards) for more details.
-
-To get the development keys, head to https://dashboard.stripe.com/test/apikeys
+If you are using Stripe Development Mode API Keys (recommended while developing and testing), you can use a 'test' credit card to mock a payment and ensure successful subscription creation. See the [Stripe docs](https://stripe.com/docs/testing#cards) for more details. To get the development keys, head to https://dashboard.stripe.com/test/apikeys
 
 When you are done testing, replace the keys in the `.env.local` file with your live keys and turn off the development mode in the Stripe Dashboard.
 
 ![Demo 11](../public/demo-11.png)
 
-Checklist:
+## Checklist:
 
-pre:
-[]: setup project
-[]: setup firebase
-[]: setup stripe
-[]: setup sendgrid
-[]: setup .env.local
-[]: create admin user
+Setup:
+-  [  ]: Setup project
+-  [  ]: Setup firebase
+-  [  ]: Setup stripe
+-  [  ]: Setup sendgrid
+-  [  ]: Create admin user
+-  [  ]: Setup .env.local
+-  [  ]: Setup siteMetadata.js
 
-mid:
-[]: build your Saas
+Development:
+-  [  ]: Build your Saas
+-  [  ]: Edit theme in 'tailwind.config.js'
 
-post:
-[]: Change Firestore to Production Mode in Firebase Settings adjust rule
-[]: Change Stripe to Production Mode in Stripe Settings
-[]: Change Firebase to Production Mode in Firebase Settings
-[]: Change the `NEXT_PUBLIC_BASE_URL` in `.env.local`
-[]: Run `yarn dev` or `npm run dev`
-[]: test app
-[]: deploy
-
----
+Deploy:
+-  [  ]: Change Firestore to Production Mode in Firebase Settings adjust rules
+-  [  ]: Change Stripe to Production Mode in Stripe Settings
+-  [  ]: Change Firebase to Production Mode in Firebase Settings
+-  [  ]: Change Firestore rules to production using the provided rules above
+-  [  ]: Change the `NEXT_PUBLIC_BASE_URL` in `.env.local`
+-  [  ]: Run `yarn dev` or `npm run dev`
+-  [  ]: Test app
+-  [  ]: Deploy

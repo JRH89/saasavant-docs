@@ -33,16 +33,16 @@ To start using Stripe, you need to obtain your API keys and configure them in yo
    - **Secret Key:** This key is used on the server-side of your application. Copy the key labeled **Secret key**.
 
 
-4. **Add Keys to Your `.env` File:**
-   - Open the `.env` file located in your project’s root directory.
-   - Add the following lines to your `.env` file, replacing the placeholder text with your actual keys:
+4. **Add Keys to Your `env.local` File:**
+   - Open the `env.local` file located in your project’s root directory.
+   - Add the following lines to your `env.local` file, replacing the placeholder text with your actual keys:
 
      ```env
      NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY={your_publishable_key_here}
      STRIPE_SECRET_KEY={your_secret_key_here}
      ```
 
-   - Save the `.env` file after adding the keys.
+   - Save the `env.local` file after adding the keys.
 
    > **Note:** For local development, consider using the test keys available in your Stripe Dashboard under the "View test data" mode. Switch to live keys when deploying to production.
 
@@ -91,4 +91,4 @@ Select the following events to send to that endpoint:
 - invoice.marked_uncollectible (optional, will sync invoices to Cloud Firestore)
 - invoice.payment_action_required (optional, will sync invoices to Cloud Firestore)
 
-Once the webhook is complete, copy the signing secret and place it in the `.env.local` file of your project.
+Once the webhook is complete, copy the signing secret and place it in the `env.local` file of your project.

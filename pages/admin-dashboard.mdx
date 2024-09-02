@@ -2,9 +2,9 @@
 
 ### Create Your First User
 
-Now that the necessary environment variables are set and the SaaSavant dependeccies are installed, you can create your first user. This can either be a temporary test user or a real user that you can set as an Admin. Setting a user as admin will allow you to access the SaaSavant admin dashboard and manage your SaaS product as mentioned earlier.
+Now that the necessary environment variables are set and the SaaSavant dependencies are installed, you can create your first user. This can either be a temporary test user or a real user that you can set as an Admin. Setting a user as Admin will allow you to access the SaaSavant Admin dashboard and manage your SaaS product as mentioned earlier.
 
-Once this is done the first time and you have access to the Admin Dashboard, you can grant admin access to any user from there. The following setup process is only required to grant admin access to the first admin user.
+Once this is done the first time and you have access to the Admin Dashboard, you can grant or remove Admin access for any user. The following setup process is only required to grant Admin access to the first Admin user.
 
 1. Open a terminal and navigate to your project directory.
 
@@ -18,13 +18,13 @@ cd /path/to/your/project
 npm run dev
 ```
 
-3. Open your browser and navigate to `Signup` page.
+3. Open your browser and navigate to the `Signup` page.
 
 [Admin Dashboard](http://localhost:3000/Signup)
 
-4. Enter your credentials and submit the form.
+4. Enter your credentials (email and password) then submit the form.
 
-To grant admin access to the user in Firebase Firestore, follow these steps:
+To grant admin access, follow these steps:
 
 1. **Navigate to the Firebase Console:**
 
@@ -41,27 +41,22 @@ To grant admin access to the user in Firebase Firestore, follow these steps:
 
 4. **Find the User Document:**
 
-   - Look for the user document you recently created. You can search by user ID or any identifying information.
+   - Look for the user document you recently created, it should be theonly one in the collection. Click on the document to open it.
 
-5. **Add an Admin Field:**
+5. **Change `isAdmin` Field:**
 
-   - Click on the user document to open it.
-   - Click on the **Add Field** button.
-   - Enter `isAdmin` as the field name.
-   - Set the type to **Boolean**.
-   - Set the value to **true**.
-   - Click **Add** to apply the changes.
+- By default, all users are set to `false`. To grant admin access, set the `isAdmin` field to `true`.
 
 ![Demo 13](/demo-13.png)
 
 6. **Save and Confirm Changes:**
 
-   - Review your changes to ensure they are correct.
-   - Ensure that the `isAdmin` field is set to `true` for the appropriate users.
+   - Ensure that the `isAdmin` field is set to `true`.
+   - Click the `Save` button.
 
-> **Note:** You can set as many users as you want to be admins. However, be cautious when assigning admin rights, as granting admin privileges to the wrong person can have significant security implications.
+> **Note:** You can set as many users as you want to be Admins. However, be cautious when assigning Admin rights, as granting these privileges to the wrong person can have significant security implications.
 
-The Admin Dashboard in SaaSavant provides a comprehensive interface for managing your application. 
+The Admin Dashboard in SaaSavant provides a comprehensive interface for managing your application.
 
 ![Demo 13](/admin-dash.png)
 
@@ -70,7 +65,7 @@ The Admin Dashboard in SaaSavant provides a comprehensive interface for managing
 #### Paginated User List
 
 - **User Management**: View and manage all registered users.
-- **Pagination**: Display users in pages, with a limit of 50 users per page and scrolling after the first 10 for ease of navigation. These values are customizable, more on that later.
+- **Pagination**: Display users in pages, with a default limit set to 50 users per page and scrolling enabled after the first 10 for ease of navigation.
 
 #### Announcements
 
@@ -79,3 +74,4 @@ The Admin Dashboard in SaaSavant provides a comprehensive interface for managing
 #### Support Tickets
 
 - **Support Tickets**: Admins can manage support tickets and mark them open or resolved. Users can submit support tickets from their dashboard.
+- **Pagination**: Display support tickets in pages, for ease of navigation.

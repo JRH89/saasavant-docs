@@ -1,14 +1,15 @@
 {
   "index": "All About SaaSavant",
-  "getting-started-with-saasavant": "Getting Started with SaaSavant",
-  "setup-firebase-project": "Setup Firebase Project",
-  "setup-stripe": "Setup Stripe",
-  "connecting-firebase-to-stripe": "Connecting Firebase to Stripe",
-  "adding-products-to-stripe": "Adding Products to Stripe",
-  "setup-sendgrid": "Setup SendGrid",
+  "getting-started-with-saasavant": "Step 1: Environment Setup",
+  "setup-firebase-project": "Step 2: Firebase Setup",
+  "setup-stripe": "Step 3: Stripe Setup",
+  "connecting-firebase-to-stripe": "Step 4: Connecting Firebase to Stripe",
+  "adding-products-to-stripe": "Step 5: Adding Products to Stripe",
+  "setup-sendgrid": "Step 6: Setup Sendgrid",
   "admin-dashboard": "Admin Dashboard",
   "using-react-toasts": "Using React Toasts",
   "wrapping-up": "Wrapping Up",
+  "checklist": "Checklist",
   "about": {
     "title": "About",
     "type": "page"

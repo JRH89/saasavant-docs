@@ -10,6 +10,7 @@ export default function Layout({ children }) {
             </Head>
             <body>
                 {children}
+                <Main />
                 <NextScript />
             </body>
         </Html>

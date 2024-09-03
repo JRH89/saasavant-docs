@@ -41,13 +41,17 @@ SaaSavant was built with the following technologies:
 - [tailwindcss](https://tailwindcss.com/)
 - [Framer Motion](https://www.framer.com/motion/)
 
+Default User Flow:
+
+As is, new users sign up with email and password which gives them access to the free tier. From their user dashboard they can upgrade to a paid tier. Clicking `Upgrade` will redirect them to the `Dashboard/subscribe` page where they can choose a paid tier. Choosing a paid tier will create a Stripe checkout portal where they can pay for their subscription. After that, they are given access to paid features.
+
 ## Key Features
 
 ### Authentication and Authorization
 
 SaaSavant includes a secure and scalable authentication system powered by Firebase Authentication. It supports a preconfigured sign-in flow using email and password.
 
-Other authentication methods, such as Google, Facebook, and GitHub, can be added as well by enabling them from the Firebase dashboard.
+Other authentication methods, such as Google, Facebook, and GitHub, Apple, Micorsoft, and Twitter can be added as well by enabling them from the Firebase dashboard.
 
 Additionally, role-based authorization ensures that users have access only to the parts of the application they need.
 
@@ -208,7 +212,7 @@ SaaSavant is built with a mobile-first approach, ensuring that your application 
 
 ### Email Service
 
-- **SendGrid**: For sending transactional emails, such as registration confirmations, newsletter, or support updates.
+- **SendGrid**: For sending transactional emails, such as registration confirmations, newsletters, or support updates.
 
 SaaSavant is pre-configured to send your users a welcome email with a link to their `Dashboard` when they register.
 

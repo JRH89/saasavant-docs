@@ -10,8 +10,12 @@
   "customizing-theme": "Step 8: Customizing Theme",
   "customizing-components": "Step 9: Customizing Components",
   "using-react-toasts": "Step 10 (optional): Customizing Toast Notifications",
-  "wrapping-up": "Wrapping Up",
+  "final-steps": "Final Steps",
   "checklist": "Checklist",
+  "user-list": "User List",
+  "announcements": "Announcements",
+  "support-tickets": "Support Tickets",
+  "newsletter": "Newsletter",
   "about": {
     "title": "About",
     "type": "page"

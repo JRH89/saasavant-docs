@@ -9,7 +9,7 @@
   },
   "author": "Jared Hooker",
   "license": "MIT",
-  "homepage": "https://saasavant.hookerhillstudios.com",
+  "homepage": "https://saasavant-saas-boilerplate.hookerhillstudios.com",
   "dependencies": {
     "next": "^13.0.6",
     "nextra": "latest",

@@ -9,7 +9,7 @@
   "admin-dashboard": "Step 7: Create Admin User",
   "customizing-theme": "Step 8: Customizing Theme",
   "customizing-components": "Step 9: Customizing Components",
-  "using-react-toasts": "Step 10 (optional): Customizing Toast Notifications",
+  "using-react-toasts": "Step 10: (optional): Customizing Toast Notifications",
   "final-steps": "Final Steps",
   "checklist": "Checklist",
   "lead-capture": "Lead Capture",
@@ -17,6 +17,7 @@
   "announcements": "Announcements",
   "support-tickets": "Support Tickets",
   "newsletter": "Newsletter",
+  "deploying-to-vercel": "Deploying to Vercel",
   "about": {
     "title": "About",
     "type": "page"

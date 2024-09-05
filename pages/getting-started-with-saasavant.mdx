@@ -1,39 +1,77 @@
+import { Callout } from "nextra-theme-docs";
+
 # Getting Started with SaaSavant
 
 ## Prerequisites
+Ensure you have the following installed:
 
-Ensure you have the following installed on your system:
-
-- Node.js: Version 18
-- npm: Version 8
-- Next.js: Version 14
+- Node.js: Version 18 (or higher)
+- npm: Version 8 (or higher)
+- Next.js: Version 14 (or higher)
 
 ## Installation
+Open your terminal.
 
-- Open your terminal
-
-- Navigate to your project directory by running:
-
-```bash
+Navigate to your project directory by running:
+```
+bash
 cd /path/to/your/project
 ```
 
-Install project dependencies using npm:
+Initialize a Git repository (if not already initialized):
+
+```
+bash
+git init
+```
+
+Add and commit your files:
+
+Before you make any custom changes to the project, it's essential to commit the original boilerplate code. This will allow you to reuse the boilerplate later by cloning the unaltered version.
+
+```
+bash
+git add .
+git commit -m "Initial commit"
+```
+
+Push to a remote repository:
+
+Next, push your initial boilerplate to a remote repository (e.g., GitHub or GitLab). This will serve as the unmodified version of your project that you can easily reuse in the future.
+
+```
+bash
+git remote add origin https://github.com/your-username/your-repo.git
+git push -u origin main
+```
+
+<Callout emoji="📣" >
+Important: Once you've pushed the boilerplate to the remote repository, it's a good idea to remove the remote origin to avoid accidentally pushing any future changes to the boilerplate. This ensures your original version remains intact.
+</Callout>
 
 ```bash
+git remote remove origin
+```
+
+Why this step is important: By pushing the unaltered boilerplate to a remote repository, you create a clean, reusable version. Later, if you want to start a new project or return to the original boilerplate, you can simply clone this repository. This ensures the core boilerplate remains intact while giving you flexibility to edit future versions.
+
+Install project dependencies using npm:
+
+```
+bash
 npm install
 ```
 
 This will install all the required dependencies for your project.
 
-## Next Steps
+Next Steps
+Edit the `siteMetadata.js` file:
 
-1. Edit the `siteMetadata.js` file:
+Open the `siteMetadata.js` file in the root of your project and fill in the missing information (e.g., project name, description). Leave any fields blank that don’t apply yet, such as API keys, which will be configured later.
 
-Open the `siteMetadata.js` file in the root of your project and fill in the missing information. Leave anything blank that is not yet applicable (API keys, etc.), these files will be complete and ready for development by the end of this guide.
+Edit the `.env.local` file:
 
-2. Edit the `.env.local` file:
+Open the `.env.local` file and fill in the required environment variables (e.g., API keys). You can leave certain fields blank if they don’t apply right now.
 
-Open the `.env.local` file in the root of your project and fill in the missing information. Leave anything blank that is not yet applicable (API keys, etc.), these files will be complete and ready for development by the end of this guide.
-
-Go to the next page to get started configuring Firebase.
+Next: Configuring Firebase
+Now that your project is set up, move on to configuring Firebase to complete the setup process.

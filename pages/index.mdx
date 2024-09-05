@@ -43,7 +43,7 @@ SaaSavant was built with the following technologies:
 
 Default User Flow:
 
-As is, new users sign up with email and password which gives them access to the free tier. From their user dashboard they can upgrade to a paid tier. Clicking `Upgrade` will redirect them to the `Dashboard/subscribe` page where they can choose a paid tier. Choosing a paid tier will create a Stripe checkout portal where they can pay for their subscription. After that, they are given access to paid features.
+By default, new users sign up with email and password which gives them access to the free tier. From their user dashboard they can upgrade to a paid tier and view their account details. Clicking `Upgrade` will redirect them to the `Dashboard/subscribe` page where they can choose a paid tier. Choosing a paid tier will create a Stripe checkout portal where they can pay for their subscription. After that, they are given access to paid features.
 
 ## Key Features
 
@@ -51,11 +51,11 @@ As is, new users sign up with email and password which gives them access to the 
 
 SaaSavant includes a secure and scalable authentication system powered by Firebase Authentication. It supports a preconfigured sign-in flow using email and password.
 
-Other authentication methods, such as Google, Facebook, and GitHub, Apple, Micorsoft, and Twitter can be added as well by enabling them from the Firebase dashboard.
+Other authentication methods, such as Google, Facebook, and GitHub, Apple, Microsoft, and Twitter can be added as well by enabling them from the Firebase dashboard.
 
 Additionally, role-based authorization ensures that users have access only to the parts of the application they need.
 
-Authentication in SaaSavant is pre-configured for signin up, signing in, and sending password reset emails.
+Authentication in SaaSavant is pre-configured for signing up, signing in, sending password reset emails, and deleting accounts.
 
 ![Authentication and Authorization](../public/about-1.png)
 
@@ -89,8 +89,10 @@ The admin dashboard in SaaSavant provides a comprehensive interface for managing
 
 #### **Newsletter**
 
-- **Create Newsletters**: Admins can create and publish newsletters using a rich text editor. Newsletters are sent to all users. 
+- **Create Newsletters**: Admins can create and publish newsletters using a rich text editor. Newsletters are sent to all users. Users can unsubscribe from the newsletter if they choose to. 
 - **Pagination**: Display newsletters in pages, with a limit of 1 newsletter per page. Customize these values in the respective components file.
+
+![Newsletter](../public/newsleter.png)
 
 ### User Dashboard
 
@@ -107,7 +109,7 @@ Each user has access to a personalized dashboard where they can:
 ![User Dashboard](../public/account.png)
 
 - **Upgrade to Premium**: Users can upgrade their subscription plan if they haven't already.
-- **Manage Account**: Subscribed users can manage their subscription details.
+- **Manage Account**: Paid tier users can manage their subscription details.
 - **Reset Password**: Users can easily reset their password if they forget it.
 - **Delete Account**: Users have the option to delete their account if they choose to leave the service.
 
@@ -158,7 +160,7 @@ SaaSavant is designed with SEO in mind to help enhance your website's visibility
 
 ### Policies Page
 
-A cookies, terms and conditions, and privacy policy page has been pre-configured in SaaSavant. You can customize ththis page to suit your specific needs.
+A cookies, terms and conditions, and privacy policy page has been pre-generated in SaaSavant. You can customize this page to suit your specific needs.
 
 #### **1. Built-In Next.js SEO Integration**
 

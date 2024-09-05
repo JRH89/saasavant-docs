@@ -17,15 +17,14 @@ const config: DocsThemeConfig = {
   ),
   footer: {
     text: (
-      <>
-        <p>
-          &copy; {new Date().getFullYear()} <a href="https://saasavant-saas-boilerplate.hookerhillstudios.com" target="_blank" rel="noopener noreferrer">
-            SaaSavant SaaS Boilerplate</a>. All rights reserved.
+      <div style={{ width: '100%', alignItems: 'center', textAlign: 'center', padding: '20px' }}>
+        <p style={{ margin: 0 }}>
+          &copy; {new Date().getFullYear()} <a href="https://saasavant-saas-boilerplate.hookerhillstudios.com" target="_blank" rel="noopener noreferrer" style={{ color: '#0070f3', textDecoration: 'none' }}>
+            SaaSavant SaaS Boilerplate
+          </a>. All rights reserved.
         </p>
-        <p>
 
-        </p>
-      </>
+      </div>
     ),
   },
 };

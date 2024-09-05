@@ -19,9 +19,8 @@ const config: DocsThemeConfig = {
     text: (
       <>
         <p>
-          &copy; {new Date().getFullYear()} SaaSavant. All rights reserved. <a href="https://www.hookerhillstudios.com" target="_blank" rel="noopener noreferrer">
-            Hooker Hill Studios
-          </a>
+          &copy; {new Date().getFullYear()} <a href="https://saasavant-saas-boilerplate.hookerhillstudios.com" target="_blank" rel="noopener noreferrer">
+            SaaSavant SaaS Boilerplate</a>. All rights reserved.
         </p>
         <p>
 

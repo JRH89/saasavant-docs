@@ -1,46 +1,67 @@
-# Configuring the "Run Payments with Stripe" Extension
+# Installing the "Run Payments with Stripe" Extension
 
-Once you've created a Stripe webhook, you'll need to configure the "Run Payments with Stripe" extension in Firebase to handle various Stripe events, such as payment successes, subscription updates, and cancellations. Follow the steps below to ensure everything is set up correctly.
+Now that Firebase and Stripe are set up, you'll need to configure the "Run Payments with Stripe" extension in Firebase to handle various Stripe events, such as payment successes, subscription updates, and cancellations. Follow the steps below to ensure everything is set up correctly.
 
 ## Step 1: Configure the "Run Payments with Stripe" Extension
 
 1. Go to your Firebase Console.
-2. Navigate to `Extensions` and select the "Run Payments with Stripe" extension.
+2. Navigate to `Extensions` and select the "Run Payments with Stripe" extension. There are two extensions with the same exact name, one made by Stripe and another made by Invertase. Oddly enough, the one we want is the one made by Invertase. Here is a direct link to the correct extension - [Run Payments With Stripe](https://extensions.dev/extensions/invertase/firestore-stripe-payments).
+
 3. Click `Install`.
 
-Follow the on-screen instructions to install the extension, You will need to enable a billing account, continue to follow the on-screen instructions and enable the two neccessary services:
+Follow the on-screen instructions to install the extension. At some point you will need to enable a billing account, do so and then continue to follow the on-screen instructions and enable the neccessary services when asked.
 
-![User Dashboard](../public/strip1.png)
-
-Click next (2 or three times) to be taken to the configuration form. I recommend the following settings, but you can change them as needed (e.g., if you want to use a different Cloud Functions deployment location). Replace the API and webhook secrets with your own. They can be found in your `.env.local` file.
+Click next (2 or three times) to be taken to the configuration form. I recommend the following settings, but you can change them as needed (e.g., if you want to use a different Cloud Functions deployment location). 
 
 ![User Dashboard](../public/strip2.png)
-![User Dashboard](../public/strip3.png)
-![User Dashboard](../public/strip4.png)
 
-## Step 4: Test the Integration
+Leave the API keys blank for now and head back to the stripe dashboard. Click the `Developers` button in the top-right corner and open the `API Keys` section from the pop-up menu.
 
-Before going live, it's important to test the webhook to ensure everything is working correctly.
+![User Dashboard](../public/rkey.png)
 
-1. In your Stripe Dashboard, go to **Developers > Webhooks**.
-2. Select your webhook and click **Send test webhook**.
-3. Choose an event type (e.g., `checkout.session.completed`) and click **Send test webhook**.
-4. Verify that the test event triggers the correct updates in your Firebase database.
+Generate a new `Restricted Key` with
 
-## Step 5: Monitor and Troubleshoot
+- Write access to Customers
+- Write access to Checkout Sessions
+- Write access to Customer Portal
+- Read access to Subscriptions
 
-After deploying, keep an eye on both the Stripe Dashboard and Firebase Console to monitor for any issues.
+Once saved, copy the Restricted Key and put it in the Firebase Extension config in the "Stripe API Key with Restricted Access" field. Click "create key" to encrypt and save the key.
 
-- **Stripe Dashboard:** Check the logs under **Developers > Webhooks** to ensure events are being delivered successfully.
-- **Firebase Console:** Monitor your Cloud Function logs to catch any errors or unexpected behavior.
+Click "Install" at the bottom. This process will take 3-5 minutes.
 
-## Conclusion
+After it is done installing, copy the url from the "How this extension works" tab.
 
-Your "Run Payments with Stripe" extension should now be fully configured and ready to handle Stripe events through your webhook. This setup allows you to automate payment processing and keep your Firebase database in sync with Stripe.
+![User Dashboard](../public/ext-1.png)
+![User Dashboard](../public/ext-2.png)
 
-For more advanced configurations: 
+Go back to the Stripe Dashboard and click the `Developers` button in the top-right corner and open the `Webhooks` section from the pop-up menu.
 
-- [Stripe documentation](https://stripe.com/docs/webhooks)
+Click `Create new endpoint` and copy the url from the "How this extension works" tab as the endpoint.
 
-- [Firebase Extensions documentation](https://firebase.google.com/products/extensions).
+Select the following events to send to the endpoint:
 
+- product.created
+- product.updated
+- product.deleted
+- price.created
+- price.updated
+- price.deleted
+- checkout.session.completed
+- customer.subscription.created
+- customer.subscription.updated
+- customer.subscription.deleted
+- tax_rate.created (optional)
+- tax_rate.updated (optional)
+- invoice.paid (optional, will sync invoices to Cloud Firestore)
+- invoice.payment_succeeded (optional, will sync invoices to Cloud Firestore)
+- invoice.payment_failed (optional, will sync invoices to Cloud Firestore)
+- invoice.upcoming (optional, will sync invoices to Cloud Firestore)
+- invoice.marked_uncollectible (optional, will sync invoices to Cloud Firestore)
+- invoice.payment_action_required (optional, will sync invoices to Cloud Firestore)
+
+Once the webhook is complete, copy the signing secret and place it in the `env.local` file of your project. 
+
+Now, head to the Firebase dashboard and click the Extensions tab. Find your "Run Payments With Stripe" extension and click 'Reconfigure'. Paste the webhook signing secret into the "Stripe Webhook Secret" field.
+
+Save the changes, this will take another 3-5 minutes. 

@@ -22,7 +22,7 @@ Click on the web button here as pictured below:
 
 ![Demo Two](../public/demo-2.png)
 
-It will ask you to give your app a name, name it whatever you like (eg. "MySaaSProject", or your product's name if you have one.)
+You will be asked to give your app a name, name it whatever you like (eg. "MySaaSProject", or your product's name if you have one.)
 
 <Callout emoji="📣">
   {" "}
@@ -50,15 +50,13 @@ And click the `Get Started` button on the page
 
 We'll start by enabling Email/Password Auth since it is aleady implemented in SaaSavant.
 
-Select `Email/Password` under the Sign-in method tab of the authentication page.
+Select `Email/Password` under the Sign-in method tab of the authentication page. toggle the `Enable` checkbox.
 
 Now Click `Save`.
 
-Choose a public facing name for you project (Your users will see this, just name it your app's / company's name)
+Choose a public facing name for you project (Your users will see this, just name it your app's / company's name) and configure a support email for the project (optional).
 
-and configure a support email for the project (most likely just your email already connected to firebase.)
-
-Auth is done, now go setup Firestore. From the left side menu, click on `Build` and click on `Firestore Database`.
+Auth is done, now it's time to setup Firestore. From the left side menu, click on `Build` and click on `Firestore Database`.
 
 ![Demo 6](../public/demo-6.png)
 
@@ -70,6 +68,63 @@ Set the location to the most appropriate location for your users (or just leave 
 
 ![Demo 6](../public/create-db.png)
 
-Start in `test mode` for now and click the `Create` button
+Start in `production mode` and click the `Create` button
 
 ![Demo 6](../public/create-db-2.png)
+
+Go to the `Rules` tab and set the following rules:
+
+![Demo Three](../public/rules.png)
+
+```json
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Users collection
+    match /users/{uid} {
+      allow read, write: if true;
+    }
+        match /announcements/{id} {
+      allow read, write: if true;
+    }
+   match /newsletters/{id} {
+      allow read, write: if true;
+    }
+       match /supportTickets/{id} {
+      allow read, write: if true;
+    }
+       match /waitingList/{id} {
+      allow read, write: if true;
+    }
+
+    // Customers collection
+    match /customers/{uid} {
+      allow read: if true;
+
+      match /checkout_sessions/{id} {
+        allow read, write: if true;
+      }
+      match /subscriptions/{id} {
+        allow read: if true;
+      }
+      match /payments/{id} {
+        allow read: if true;
+      }
+    }
+
+    // Products collection
+    match /products/{id} {
+      allow read: if true;
+
+      match /prices/{id} {
+        allow read: if true;
+      }
+
+      match /tax_rates/{id} {
+        allow read: if true;
+      }
+    }
+  }
+}
+```

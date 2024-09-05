@@ -2,7 +2,7 @@ import { Callout } from "nextra-theme-docs";
 
 # Adding Products to Stripe
 
-Let's create a product in Stripe so that users can upgrade their accounts to become Premium Users.
+Let's create a subscription product in Stripe so that users can upgrade their accounts to become Premium Users.
 
 <Callout emoji="📣"> **Important:** Do not add products before your extension is fully installed and the webhook is set up. Adding a product triggers the webhook, so if the installation isn't complete, your product might not appear until you update it. </Callout>
 
@@ -16,21 +16,21 @@ Let's create a product in Stripe so that users can upgrade their accounts to bec
 
 - Enter Product Details:
 
-  1. Product Name: Give your product a name, such as "Monthly Plan" or "Yearly Plan".
+  1. Product Name: Give your product a name, such as "SaaS Subscription". This name will appear on the checkout page, so choose appropriately.
   2. Description: Optionally, provide a brief description of the product.
-  3. Image: Providing a thumnail image is recommended, it will be displayed in the product catalog and on the checkout page.
+  3. Image: Providing a thumbnail image is recommended, it will be displayed in the product catalog and on the checkout page.
 
 - Configure the Product:
 
   1. Set the correct price.
 
-  2. Choose the type of charge (recurring, one-time, etc.).
+  2. Choose the type of charge (choose recurring and monthly for this price).
 
   3. Configure any other options according to your needs.
 
-The default subscription component in SaaSavant expects two products/prices, one for monthly and one for yearly. You can add additional products if you wish.
+- Save the product.
 
-2. Add Stripe "priceIds" to Environment Variables
+2. Add Stripe "priceId" to Environment Variables
 
 - Copy the Price ID:
 
@@ -49,20 +49,16 @@ The default subscription component in SaaSavant expects two products/prices, one
 - Paste the copied Price ID into the appropriate variable, for example:
 
 ```env
-Copy code
 NEXT_PUBLIC_MONTHLY_ID=your_monthly_price_id_here
 NEXT_PUBLIC_YEARLY_ID=your_yearly_price_id_here
 ```
 
-Replace `your_monthly_price_id_here` and `your_yearly_price_id_here` with the actual Price IDs you copied.
+- Click the `+` icon while still in the product details to add another price to this product. Choose recurring and yearly.
+
+- Repeat the above process for storing the Price ID in your environment variables.
 
 Save Your Changes:
 
 Ensure you save the `.env.local` file after pasting in the Price IDs.
-Repeat for Additional Products:
-
-If you have multiple products, repeat the process to add each product&apos;s Price ID to the `.env.local` file.
-
----
 
 You're all set! Your Stripe products are now configured, and the Price IDs are stored in your environment variables.
